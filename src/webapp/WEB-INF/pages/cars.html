@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>cars</h1>
+
+<table border="1">
+    <tr>
+        <th>car_count</th>
+        <th>model</th>
+        <th>series</th>
+        <th>power</th>
+    </tr>
+
+    <tr th:each="car, state : ${cars}">
+        <td th:utext="${state.count}">count</td>
+        <td th:utext="${car.getModel()}">model</td>
+        <td th:utext="${car.getSeries()}">series</td>
+        <td th:utext="${car.getPower()}">power</td>
+    </tr>
+
+</table>
+</body>
+</html>
